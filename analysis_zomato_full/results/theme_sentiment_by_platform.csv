@@ -1,0 +1,11 @@
+platform,theme_final,negative,neutral,positive,total_rows,negative_share,positive_share,net_sentiment
+google_play,delivery,6408,734,8964,16106,0.3979,0.5566,0.1587
+google_play,refund_cancellation,7547,170,828,8545,0.8832,0.0969,-0.7863
+google_play,app_experience,1066,156,4590,5812,0.1834,0.7897,0.6063
+google_play,customer_support,2179,53,959,3191,0.6829,0.3005,-0.3823
+google_play,pricing_fees,1169,235,1696,3100,0.3771,0.5471,0.17
+google_play,other,356,61,2280,2697,0.132,0.8454,0.7134
+google_play,trust_reviews,443,58,668,1169,0.379,0.5714,0.1925
+google_play,food_quality,213,20,278,511,0.4168,0.544,0.1272
+google_play,competitor_comparison,47,8,301,356,0.132,0.8455,0.7135
+google_play,order_issue,77,10,23,110,0.7,0.2091,-0.4909

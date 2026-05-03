@@ -1,0 +1,3 @@
+brand,negative,neutral,positive,total_rows,negative_share,neutral_share,positive_share,net_sentiment,priority_score
+swiggy,24865,869,19804,45538,0.546,0.0191,0.4349,-0.1111,24863.75
+zomato,18923,1187,21487,41597,0.4549,0.0285,0.5166,0.0616,18922.48

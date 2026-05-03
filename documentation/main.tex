@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering}
+  {CHAPTER \thechapter}
+  {0.5em}
+  {\Large}
+
+\newcommand{\projecttitle}{Analyzing Customer Sentiment Toward Zomato Using Google Play Store Reviews: Implications for Brand Strategy and Customer Experience}
+\newcommand{\studentname}{SUHANI SHRIVASTAVA}
+\newcommand{\regnumber}{24EMBA1442}
+\newcommand{\guidename}{Dr. SURAJ PG}
+\newcommand{\declarationplace}{VIT VELLORE}
+\newcommand{\declarationdate}{[Date]}
+\newcommand{\submissionmonthyear}{May 2026}
+\newcommand{\institutionname}{VIT Online Learning Program}
+\newcommand{\programname}{Master of Business Administration}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1.0cm}
+
+        {\Large\bfseries \projecttitle \par}
+
+        \vspace{1.5cm}
+
+        Submitted in partial fulfillment of the requirements for the degree of
+
+        \vspace{0.5cm}
+
+        {\large\bfseries \programname \par}
+
+        \vspace{1.2cm}
+
+        by
+
+        \vspace{0.8cm}
+
+        {\large\bfseries \studentname \par}
+        {\large \regnumber \par}
+
+        \vspace{1.2cm}
+
+        Under the guidance of
+
+        \vspace{0.5cm}
+
+        {\large\bfseries \guidename \par}
+
+        \vfill
+
+        {\large \submissionmonthyear \par}
+        \vspace{0.4cm}
+        {\large\bfseries \institutionname \par}
+    \end{center}
+\end{titlepage}
+
+\input{frontmatter/declaration}
+\clearpage
+
+\input{frontmatter/abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\clearpage
+\input{annexure/questionnaire}
+
+\end{document}

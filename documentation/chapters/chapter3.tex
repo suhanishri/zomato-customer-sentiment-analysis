@@ -1,0 +1,109 @@
+\chapter{Research Methodology}
+
+\section{Introduction}
+
+This chapter explains the methodology adopted for analyzing customer sentiment toward Zomato using Google Play Store reviews. It presents the research design, data source, data collection approach, preprocessing stages, dataset construction process, sentiment labeling logic, thematic classification logic, and analytical framework used in the study. Since the project is based on digital review data rather than questionnaire responses, the methodology is structured around secondary data collection and NLP-oriented text analysis.
+
+\section{Research Design}
+
+The study follows a descriptive and exploratory research design. It is descriptive because it examines the sentiment distribution and major themes present in Zomato customer reviews. It is exploratory because it investigates how large-scale unstructured review data can reveal patterns related to customer experience, dissatisfaction, service pain points, and brand perception.
+
+The study is also applied in nature because the objective is not limited to theoretical understanding. The findings are intended to support managerial interpretation in areas such as customer experience improvement, service recovery, app usability, and brand strategy. The research therefore combines text analytics with a business interpretation framework.
+
+\section{Source of Data}
+
+The study is based entirely on secondary data collected from the Google Play Store. The primary source consists of user reviews posted for the Zomato mobile application. These reviews include both star ratings and textual comments, making them suitable for sentiment and thematic analysis.
+
+To improve coverage and reduce sorting bias, review data was collected under multiple retrieval settings. The collection process included three sort modes: newest, most relevant, and rating-based retrieval. Reviews were also collected across English and Hindi language settings. This multi-source retrieval strategy helped capture recent reviews, highly engaged issue-focused reviews, and strongly positive rating-based reviews within the same research corpus.
+
+\section{Data Collection Procedure}
+
+Review data was collected programmatically using a Python-based Google Play Store scraping workflow. The project used the application identifier for Zomato and downloaded review data in batches under the selected sort and language settings. Each review record contained fields such as review identifier, review text, user rating, author name, date, and engagement-related metadata.
+
+The collection pipeline was configured with practical controls such as minimum text length, batch size, maximum review limits, and country-language settings. Reviews were stored first in raw format and then passed through a cleaning stage. The use of multiple sort settings was important because a single retrieval mode would not provide a balanced view of customer feedback. For example, most relevant results tend to surface strongly engaged complaint-oriented content, while rating-based retrieval produces a larger concentration of highly positive reviews.
+
+\section{Sampling and Review Selection Strategy}
+
+The study does not use sampling in the traditional survey sense. Instead, it follows a review selection strategy based on platform retrieval settings and filtering rules. Reviews were gathered from six Play Store exports:
+
+\begin{enumerate}[label=\arabic*.]
+    \item newest -- English
+    \item most relevant -- English
+    \item rating -- English
+    \item newest -- Hindi
+    \item most relevant -- Hindi
+    \item rating -- Hindi
+\end{enumerate}
+
+After merging and deduplication, the cleaned Play Store review corpus contained 41,597 unique Zomato reviews. This final deduplicated union formed the core review base for the present study. The use of multiple exports improved coverage across time, sentiment intensity, and issue visibility while reducing overdependence on any single retrieval setting.
+
+\section{Data Cleaning and Preprocessing}
+
+The raw review data required several preprocessing steps before analysis. First, review text was standardized by removing extra spaces, line breaks, hyperlinks, and unnecessary formatting noise. Reviews with empty or extremely short text were excluded from further analysis. A minimum text-length threshold was used to retain only reviews that contained analyzable information.
+
+Second, relevance filtering was applied so that only reviews clearly connected to Zomato-related service experience were retained. Reviews were assessed using brand-related and issue-related keyword relevance terms such as delivery, refund, customer support, order, pricing, trust, app, and related service concepts. Meta-like comments and spillover references that were primarily about competitors without meaningful Zomato context were removed.
+
+Third, duplicate handling was carried out at two levels. Reviews were deduplicated using platform review identifiers where available, and an additional normalized-text deduplication step was used to remove repeated or near-identical comments. This was necessary because data had been collected across multiple sort settings and language variants, which created overlap between exports.
+
+\section{Dataset Construction}
+
+After cleaning, the relevant review exports were merged into a unified dataset. The final dataset construction process standardized the structure of each review record into common analytical fields such as platform, brand, review identifier, review text, normalized text, rating, date, language hint, recency bucket, sentiment label, theme label, and supporting metadata.
+
+The dataset also included derived variables such as text length, word count, positive keyword hits, negative keyword hits, and a rating-text mismatch flag. Reviews were grouped into recency buckets to distinguish relatively recent customer feedback from older reviews. This standardized dataset structure made it possible to perform consistent sentiment, theme, and business interpretation analysis across the final review corpus.
+
+\section{Sentiment Labeling Logic}
+
+The main sentiment labeling strategy used in this study was rating-based. Google Play Store ratings were treated as a proxy for customer sentiment and mapped into three sentiment categories:
+
+\begin{enumerate}[label=\arabic*.]
+    \item ratings of 1 or 2 were labeled as \textit{negative}
+    \item a rating of 3 was labeled as \textit{neutral}
+    \item ratings of 4 or 5 were labeled as \textit{positive}
+\end{enumerate}
+
+This approach was adopted because user ratings provide a direct, platform-native signal of satisfaction or dissatisfaction. In addition to the rating-based label, the project also computed simple positive and negative keyword hits from the review text in order to identify cases where the textual tone and numerical rating did not align. Such cases were marked through a rating-text mismatch indicator and were treated as a methodological caution rather than relabeled manually.
+
+Thus, sentiment in the present study should be understood as a structured proxy derived from user ratings, supported by textual cross-checking. This approach is appropriate for large-scale review analytics but also carries the limitation that star ratings do not always capture the full nuance of textual sentiment.
+
+\section{Theme Classification Logic}
+
+The study used a rule-based thematic labeling method to identify the dominant issue reflected in each review. Review text was normalized and then checked against an ordered set of keyword-rule themes. The theme categories used in the study were:
+
+\begin{enumerate}[label=\arabic*.]
+    \item refund and cancellation
+    \item delivery
+    \item pricing and fees
+    \item customer support
+    \item trust and reviews
+    \item order issue
+    \item food quality
+    \item app experience
+    \item competitor comparison
+    \item other
+\end{enumerate}
+
+The theme assignment process followed a first-match-wins logic. In other words, if a review contained keywords associated with multiple issues, the theme appearing first in the rule order was assigned as the final theme. When no keyword-rule match was found, the model fell back to a source theme hint generated during earlier cleaning stages. If no clean mapping was possible, the review was assigned to the \textit{other} category.
+
+This approach made theme classification transparent and reproducible, though it also introduced a limitation: each review received only one final theme even if the text mentioned multiple service issues.
+
+\section{Analytical Approach}
+
+The analytical approach of the study combined descriptive review analytics with NLP-oriented labeling and thematic interpretation. After dataset construction, reviews were analyzed in terms of sentiment distribution, theme frequency, and theme-wise sentiment patterns. The emphasis of the study was not only on counting positive, negative, and neutral reviews, but also on identifying which themes most strongly influenced customer perception.
+
+The broader project also included a baseline machine learning workflow using TF-IDF vectorization and logistic regression for sentiment modeling. However, within the scope of the present paper, the central methodology is the construction and analysis of a cleaned Play Store review dataset using rating-proxy sentiment labels and rule-based thematic categorization. This approach keeps the methodology aligned with the business objective of understanding customer perception in a structured and interpretable way.
+
+\section{Tools and Technologies Used}
+
+The project was implemented using Python-based data collection and analysis scripts. Review collection was performed through a Google Play scraping library, while data cleaning and dataset construction were handled through custom Python workflows. Text preprocessing, transformation, and data management were carried out using standard data analysis libraries, and the broader project environment also included dashboard components for visualization and interpretation.
+
+These tools supported an end-to-end workflow consisting of review extraction, cleaning, filtering, deduplication, labeling, and downstream analysis. The use of code-based processing improved reproducibility, consistency, and scalability in comparison with manual review analysis.
+
+\section{Limitations of the Methodology}
+
+Although the methodology is suitable for large-scale app review analytics, it has certain limitations. First, the sentiment labels are based primarily on star ratings, which serve as a practical proxy rather than a perfect representation of textual sentiment. Some users may assign a high rating while expressing dissatisfaction in the text, or assign a low rating while mentioning both positive and negative experiences.
+
+Second, the theme classification method uses deterministic keyword rules and assigns only one final theme per review. This improves interpretability but may oversimplify reviews that mention multiple overlapping issues. Third, Google Play Store reviews represent only one digital feedback channel and therefore do not capture the complete universe of customer opinion. Despite these limitations, the methodology is appropriate for the present study because it provides a structured, transparent, and business-relevant way to analyze large volumes of Zomato customer feedback.
+
+\section{Chapter Summary}
+
+This chapter presented the research methodology used in the study, including the research design, data source, data collection process, review selection strategy, cleaning and preprocessing stages, dataset construction logic, sentiment labeling method, theme classification framework, analytical approach, tools used, and key limitations. The next component of the report will build on this methodological foundation through the questionnaire or annexure material prepared for Review 1.

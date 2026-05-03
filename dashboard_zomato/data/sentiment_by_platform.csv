@@ -1,0 +1,3 @@
+platform,negative,neutral,positive,total_rows,negative_share,neutral_share,positive_share,net_sentiment,priority_score
+google_play,19459,1631,20507,41597,0.4678,0.0392,0.493,0.0252,19459.08
+youtube,147,1128,131,1406,0.1046,0.8023,0.0932,-0.0114,147.07

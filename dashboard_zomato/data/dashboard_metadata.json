@@ -1,0 +1,14 @@
+{
+  "input_file": "C:\\Users\\sshrivastava\\Downloads\\mba-project\\analysis_zomato_full\\results\\full_dataset_scored_predictions.csv",
+  "rows": 41597,
+  "generated_files": [
+    "overview_kpis.json",
+    "sentiment_by_theme.csv",
+    "sentiment_by_theme_2024_plus.csv",
+    "sentiment_by_year.csv",
+    "theme_priority.csv",
+    "top_negative_examples_by_theme.csv",
+    "top_positive_examples_by_theme.csv",
+    "dashboard_metadata.json"
+  ]
+}

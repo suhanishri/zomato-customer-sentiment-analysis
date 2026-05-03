@@ -1,0 +1,31 @@
+{
+  "input_file": "C:\\Users\\sshrivastava\\Downloads\\mba-project\\master_final_dataset\\master_final_dataset.csv",
+  "total_rows_input": 41597,
+  "total_rows_modeling": 41597,
+  "sentiment_counts": {
+    "positive": 21487,
+    "negative": 18923,
+    "neutral": 1187
+  },
+  "platform_counts": {
+    "google_play": 41597
+  },
+  "theme_counts": {
+    "delivery": 16106,
+    "refund_cancellation": 8545,
+    "app_experience": 5812,
+    "customer_support": 3191,
+    "pricing_fees": 3100,
+    "other": 2697,
+    "trust_reviews": 1169,
+    "food_quality": 511,
+    "competitor_comparison": 356,
+    "order_issue": 110
+  },
+  "recent_bucket_counts": {
+    "pre_2024": 26277,
+    "2024_plus": 15320
+  },
+  "avg_text_len_chars": 271.97271437844074,
+  "median_text_len_chars": 260.0
+}

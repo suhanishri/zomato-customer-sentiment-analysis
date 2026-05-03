@@ -1,0 +1,122 @@
+{
+  "baseline_word_lr": {
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "matrix": [
+      [
+        3477,
+        181,
+        127
+      ],
+      [
+        102,
+        80,
+        55
+      ],
+      [
+        250,
+        211,
+        3837
+      ]
+    ]
+  },
+  "tuned_word_lr": {
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "matrix": [
+      [
+        3536,
+        114,
+        135
+      ],
+      [
+        117,
+        51,
+        69
+      ],
+      [
+        260,
+        123,
+        3915
+      ]
+    ]
+  },
+  "word_char_lr": {
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "matrix": [
+      [
+        3494,
+        148,
+        143
+      ],
+      [
+        109,
+        54,
+        74
+      ],
+      [
+        245,
+        147,
+        3906
+      ]
+    ]
+  },
+  "complement_nb": {
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "matrix": [
+      [
+        3574,
+        5,
+        206
+      ],
+      [
+        133,
+        3,
+        101
+      ],
+      [
+        404,
+        0,
+        3894
+      ]
+    ]
+  },
+  "paper_style_random_forest": {
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "matrix": [
+      [
+        3479,
+        12,
+        294
+      ],
+      [
+        152,
+        4,
+        81
+      ],
+      [
+        405,
+        6,
+        3887
+      ]
+    ]
+  }
+}

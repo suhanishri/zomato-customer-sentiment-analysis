@@ -1,0 +1,198 @@
+{
+  "total_rows": 41597,
+  "play_store_rows": 41597,
+  "positive_rows": 20587,
+  "negative_rows": 19505,
+  "neutral_rows": 1505,
+  "positive_share": 0.4949,
+  "negative_share": 0.4689,
+  "neutral_share": 0.0362,
+  "recent_2024_plus_rows": 15320,
+  "recent_2024_plus_share": 0.3683,
+  "top_priority_themes": [
+    {
+      "theme_final": "refund_cancellation",
+      "negative": 7547,
+      "neutral": 170,
+      "positive": 828,
+      "total_rows": 8545,
+      "negative_share": 0.8832,
+      "neutral_share": 0.0199,
+      "positive_share": 0.0969,
+      "net_sentiment": -0.7863,
+      "priority_score": 7546.94
+    },
+    {
+      "theme_final": "delivery",
+      "negative": 6408,
+      "neutral": 734,
+      "positive": 8964,
+      "total_rows": 16106,
+      "negative_share": 0.3979,
+      "neutral_share": 0.0456,
+      "positive_share": 0.5566,
+      "net_sentiment": 0.1587,
+      "priority_score": 6408.58
+    },
+    {
+      "theme_final": "customer_support",
+      "negative": 2179,
+      "neutral": 53,
+      "positive": 959,
+      "total_rows": 3191,
+      "negative_share": 0.6829,
+      "neutral_share": 0.0166,
+      "positive_share": 0.3005,
+      "net_sentiment": -0.3823,
+      "priority_score": 2179.13
+    },
+    {
+      "theme_final": "pricing_fees",
+      "negative": 1169,
+      "neutral": 235,
+      "positive": 1696,
+      "total_rows": 3100,
+      "negative_share": 0.3771,
+      "neutral_share": 0.0758,
+      "positive_share": 0.5471,
+      "net_sentiment": 0.17,
+      "priority_score": 1169.01
+    },
+    {
+      "theme_final": "app_experience",
+      "negative": 1066,
+      "neutral": 156,
+      "positive": 4590,
+      "total_rows": 5812,
+      "negative_share": 0.1834,
+      "neutral_share": 0.0268,
+      "positive_share": 0.7897,
+      "net_sentiment": 0.6063,
+      "priority_score": 1065.92
+    }
+  ],
+  "top_negative_themes": [
+    {
+      "theme_final": "refund_cancellation",
+      "negative": 7547,
+      "neutral": 170,
+      "positive": 828,
+      "total_rows": 8545,
+      "negative_share": 0.8832,
+      "neutral_share": 0.0199,
+      "positive_share": 0.0969,
+      "net_sentiment": -0.7863,
+      "priority_score": 7546.94
+    },
+    {
+      "theme_final": "order_issue",
+      "negative": 77,
+      "neutral": 10,
+      "positive": 23,
+      "total_rows": 110,
+      "negative_share": 0.7,
+      "neutral_share": 0.0909,
+      "positive_share": 0.2091,
+      "net_sentiment": -0.4909,
+      "priority_score": 77.0
+    },
+    {
+      "theme_final": "customer_support",
+      "negative": 2179,
+      "neutral": 53,
+      "positive": 959,
+      "total_rows": 3191,
+      "negative_share": 0.6829,
+      "neutral_share": 0.0166,
+      "positive_share": 0.3005,
+      "net_sentiment": -0.3823,
+      "priority_score": 2179.13
+    },
+    {
+      "theme_final": "food_quality",
+      "negative": 213,
+      "neutral": 20,
+      "positive": 278,
+      "total_rows": 511,
+      "negative_share": 0.4168,
+      "neutral_share": 0.0391,
+      "positive_share": 0.544,
+      "net_sentiment": 0.1272,
+      "priority_score": 212.98
+    },
+    {
+      "theme_final": "delivery",
+      "negative": 6408,
+      "neutral": 734,
+      "positive": 8964,
+      "total_rows": 16106,
+      "negative_share": 0.3979,
+      "neutral_share": 0.0456,
+      "positive_share": 0.5566,
+      "net_sentiment": 0.1587,
+      "priority_score": 6408.58
+    }
+  ],
+  "top_positive_themes": [
+    {
+      "theme_final": "competitor_comparison",
+      "negative": 47,
+      "neutral": 8,
+      "positive": 301,
+      "total_rows": 356,
+      "negative_share": 0.132,
+      "neutral_share": 0.0225,
+      "positive_share": 0.8455,
+      "net_sentiment": 0.7135,
+      "priority_score": 46.99
+    },
+    {
+      "theme_final": "other",
+      "negative": 356,
+      "neutral": 61,
+      "positive": 2280,
+      "total_rows": 2697,
+      "negative_share": 0.132,
+      "neutral_share": 0.0226,
+      "positive_share": 0.8454,
+      "net_sentiment": 0.7134,
+      "priority_score": 356.0
+    },
+    {
+      "theme_final": "app_experience",
+      "negative": 1066,
+      "neutral": 156,
+      "positive": 4590,
+      "total_rows": 5812,
+      "negative_share": 0.1834,
+      "neutral_share": 0.0268,
+      "positive_share": 0.7897,
+      "net_sentiment": 0.6063,
+      "priority_score": 1065.92
+    },
+    {
+      "theme_final": "trust_reviews",
+      "negative": 443,
+      "neutral": 58,
+      "positive": 668,
+      "total_rows": 1169,
+      "negative_share": 0.379,
+      "neutral_share": 0.0496,
+      "positive_share": 0.5714,
+      "net_sentiment": 0.1925,
+      "priority_score": 443.05
+    },
+    {
+      "theme_final": "delivery",
+      "negative": 6408,
+      "neutral": 734,
+      "positive": 8964,
+      "total_rows": 16106,
+      "negative_share": 0.3979,
+      "neutral_share": 0.0456,
+      "positive_share": 0.5566,
+      "net_sentiment": 0.1587,
+      "priority_score": 6408.58
+    }
+  ]
+}

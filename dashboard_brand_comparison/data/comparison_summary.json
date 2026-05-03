@@ -1,0 +1,82 @@
+{
+  "rows_google_only_zomato": 41597,
+  "rows_google_only_swiggy": 45538,
+  "zomato_sentiment_counts": {
+    "positive": 21487,
+    "negative": 18923,
+    "neutral": 1187
+  },
+  "swiggy_sentiment_counts": {
+    "negative": 24865,
+    "positive": 19804,
+    "neutral": 869
+  },
+  "top_theme_gaps_negative_share": [
+    {
+      "theme_final": "customer_support",
+      "negative_share_swiggy": 0.6798,
+      "negative_share_zomato": 0.6537,
+      "positive_share_swiggy": 0.3112,
+      "positive_share_zomato": 0.3284,
+      "net_sentiment_swiggy": -0.3686,
+      "net_sentiment_zomato": -0.3253,
+      "total_rows_swiggy": 3242.0,
+      "total_rows_zomato": 3191.0,
+      "negative_share_gap_zomato_minus_swiggy": -0.0261,
+      "net_sentiment_gap_zomato_minus_swiggy": 0.0433
+    },
+    {
+      "theme_final": "app_experience",
+      "negative_share_swiggy": 0.2094,
+      "negative_share_zomato": 0.1779,
+      "positive_share_swiggy": 0.7702,
+      "positive_share_zomato": 0.7992,
+      "net_sentiment_swiggy": 0.5609,
+      "net_sentiment_zomato": 0.6213,
+      "total_rows_swiggy": 5340.0,
+      "total_rows_zomato": 5812.0,
+      "negative_share_gap_zomato_minus_swiggy": -0.0315,
+      "net_sentiment_gap_zomato_minus_swiggy": 0.0604
+    },
+    {
+      "theme_final": "competitor_comparison",
+      "negative_share_swiggy": 0.1865,
+      "negative_share_zomato": 0.1404,
+      "positive_share_swiggy": 0.8045,
+      "positive_share_zomato": 0.8539,
+      "net_sentiment_swiggy": 0.6181,
+      "net_sentiment_zomato": 0.7135,
+      "total_rows_swiggy": 3100.0,
+      "total_rows_zomato": 356.0,
+      "negative_share_gap_zomato_minus_swiggy": -0.0461,
+      "net_sentiment_gap_zomato_minus_swiggy": 0.0954
+    },
+    {
+      "theme_final": "refund_cancellation",
+      "negative_share_swiggy": 0.9031,
+      "negative_share_zomato": 0.8433,
+      "positive_share_swiggy": 0.082,
+      "positive_share_zomato": 0.1365,
+      "net_sentiment_swiggy": -0.8211,
+      "net_sentiment_zomato": -0.7068,
+      "total_rows_swiggy": 11715.0,
+      "total_rows_zomato": 8545.0,
+      "negative_share_gap_zomato_minus_swiggy": -0.0598,
+      "net_sentiment_gap_zomato_minus_swiggy": 0.1143
+    },
+    {
+      "theme_final": "delivery",
+      "negative_share_swiggy": 0.4674,
+      "negative_share_zomato": 0.392,
+      "positive_share_swiggy": 0.5106,
+      "positive_share_zomato": 0.5751,
+      "net_sentiment_swiggy": 0.0432,
+      "net_sentiment_zomato": 0.1831,
+      "total_rows_swiggy": 17210.0,
+      "total_rows_zomato": 16106.0,
+      "negative_share_gap_zomato_minus_swiggy": -0.0754,
+      "net_sentiment_gap_zomato_minus_swiggy": 0.1399
+    }
+  ],
+  "comparison_note": "Comparison tables use Google Play only and final weak sentiment labels for both brands."
+}

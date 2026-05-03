@@ -1,0 +1,12 @@
+{
+  "model_preset": "tuned_word_lr",
+  "model_label": "Tuned TF-IDF + Logistic Regression",
+  "accuracy": 0.9017,
+  "macro_f1": 0.6811,
+  "weighted_f1": 0.904,
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ]
+}
