@@ -120,15 +120,21 @@ def build_sentiment_bar(df: pd.DataFrame, x: str, title: str):
 
 
 def build_net_sentiment_chart(df: pd.DataFrame, x: str, title: str):
+    chart_df = df.copy()
+    chart_df["net_sentiment_label"] = chart_df["net_sentiment"].map(lambda value: f"{value:.1%}")
     fig = px.bar(
-        df,
+        chart_df,
         x=x,
         y="net_sentiment",
         title=title,
         color="net_sentiment",
+        text="net_sentiment_label",
         color_continuous_scale=["#b22222", "#f4d35e", "#1f7a1f"],
+        color_continuous_midpoint=0,
+        range_color=[-1, 1],
     )
-    fig.update_layout(yaxis_tickformat=".0%")
+    fig.update_traces(textposition="outside")
+    fig.update_layout(yaxis_tickformat=".0%", coloraxis_colorbar_title="Net sentiment")
     return fig
 
 
