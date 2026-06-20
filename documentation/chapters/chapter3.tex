@@ -14,26 +14,33 @@ The study is also applied in nature because the objective is not limited to theo
 
 The study is based entirely on secondary data collected from the Google Play Store. The primary source consists of user reviews posted for the Zomato mobile application. These reviews include both star ratings and textual comments, making them suitable for sentiment and thematic analysis \cite{pagano2013,guzman2017}.
 
-To improve coverage and reduce sorting bias, review data was collected under multiple retrieval settings. The collection process included three sort modes: newest, most relevant, and rating-based retrieval. Reviews were also collected across English and Hindi language settings. This multi-source retrieval strategy helped capture recent reviews, highly engaged issue-focused reviews, and strongly positive rating-based reviews within the same research corpus.
+To improve coverage and reduce sorting bias, review data was collected under multiple retrieval settings. The collection process included three sort modes: newest, most relevant, and rating-based retrieval. This multi-source retrieval strategy helped capture recent reviews, highly engaged issue-focused reviews, and strongly positive rating-based reviews within the same research corpus.
 
 \section{Data Collection Procedure}
 
-Review data was collected programmatically using a Python-based Google Play Store scraping workflow. The project used the application identifier for Zomato and downloaded review data in batches under the selected sort and language settings. Each review record contained fields such as review identifier, review text, user rating, author name, date, and engagement-related metadata.
+Review data was collected programmatically using a Python-based Google Play Store scraping workflow. The project used the application identifier for Zomato and downloaded review data in batches under the selected retrieval settings. Each review record contained fields such as review identifier, review text, user rating, author name, date, and engagement-related metadata.
 
-The collection pipeline was configured with practical controls such as minimum text length, batch size, maximum review limits, and country-language settings. Reviews were stored first in raw format and then passed through a cleaning stage. The use of multiple sort settings was important because a single retrieval mode would not provide a balanced view of customer feedback. For example, most relevant results tend to surface strongly engaged complaint-oriented content, while rating-based retrieval produces a larger concentration of highly positive reviews.
+The collection pipeline was configured with practical controls such as minimum text length, batch size, maximum review limits, and platform-country settings. Reviews were stored first in raw format and then passed through a cleaning stage. The use of multiple sort settings was important because a single retrieval mode would not provide a balanced view of customer feedback. For example, most relevant results tend to surface strongly engaged complaint-oriented content, while rating-based retrieval produces a larger concentration of highly positive reviews.
 
 \section{Sampling and Review Selection Strategy}
 
-The study does not use sampling in the traditional survey sense. Instead, it follows a review selection strategy based on platform retrieval settings and filtering rules. Reviews were gathered from six Play Store exports:
+The study does not use sampling in the traditional survey sense. Instead, it follows a review selection strategy based on platform retrieval settings and filtering rules. Reviews were gathered through three major Play Store retrieval views so that the final corpus would not depend on a single ordering mechanism.
 
-\begin{enumerate}[label=\arabic*.]
-    \item newest -- English
-    \item most relevant -- English
-    \item rating -- English
-    \item newest -- Hindi
-    \item most relevant -- Hindi
-    \item rating -- Hindi
-\end{enumerate}
+\begin{table}[h]
+\centering
+\caption{Google Play Review Collection Settings Used in the Study}
+\small
+\begin{tabular}{L{0.23\textwidth}L{0.55\textwidth}}
+\toprule
+\textbf{Retrieval Setting} & \textbf{Purpose in the Final Corpus} \\
+\midrule
+Newest & Capture relatively recent customer feedback and current issue visibility \\
+Most relevant & Surface highly engaged or prominently ranked reviews with strong issue signals \\
+Rating-based & Capture reviews associated with strong rating polarity, especially highly positive and highly negative experiences \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
 
 After merging and deduplication, the cleaned Play Store review corpus contained 41,597 unique Zomato reviews. This final deduplicated union formed the core review base for the present study. The use of multiple exports improved coverage across time, sentiment intensity, and issue visibility while reducing overdependence on any single retrieval setting.
 
@@ -43,11 +50,11 @@ The raw review data required several preprocessing steps before analysis. First,
 
 Second, relevance filtering was applied so that only reviews clearly connected to Zomato-related service experience were retained. Reviews were assessed using brand-related and issue-related keyword relevance terms such as delivery, refund, customer support, order, pricing, trust, app, and related service concepts. Meta-like comments and spillover references that were primarily about competitors without meaningful Zomato context were removed.
 
-Third, duplicate handling was carried out at two levels. Reviews were deduplicated using platform review identifiers where available, and an additional normalized-text deduplication step was used to remove repeated or near-identical comments. This was necessary because data had been collected across multiple sort settings and language variants, which created overlap between exports.
+Third, duplicate handling was carried out at two levels. Reviews were deduplicated using platform review identifiers where available, and an additional normalized-text deduplication step was used to remove repeated or near-identical comments. This was necessary because data had been collected across multiple sort settings, which created overlap between exports.
 
 \section{Dataset Construction}
 
-After cleaning, the relevant review exports were merged into a unified dataset. The final dataset construction process standardized the structure of each review record into common analytical fields such as platform, brand, review identifier, review text, normalized text, rating, date, language hint, recency bucket, sentiment label, theme label, and supporting metadata.
+After cleaning, the relevant review exports were merged into a unified dataset. The final dataset construction process standardized the structure of each review record into common analytical fields such as platform, brand, review identifier, review text, normalized text, rating, date, recency bucket, sentiment label, theme label, and supporting metadata.
 
 The dataset also included derived variables such as text length, word count, positive keyword hits, negative keyword hits, and a rating-text mismatch flag. Reviews were grouped into recency buckets to distinguish relatively recent customer feedback from older reviews. This standardized dataset structure made it possible to perform consistent sentiment, theme, and business interpretation analysis across the final review corpus.
 
