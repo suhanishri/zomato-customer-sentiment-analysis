@@ -11,6 +11,7 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{enumitem}
+\usepackage{float}
 \usepackage[hidelinks]{hyperref}
 
 \onehalfspacing
@@ -29,9 +30,23 @@
 \newcommand{\guidename}{Dr. SURAJ PG}
 \newcommand{\declarationplace}{VIT VELLORE}
 \newcommand{\declarationdate}{[Date]}
+\newcommand{\certificateplace}{VIT VELLORE}
+\newcommand{\certificatedate}{[Date]}
 \newcommand{\submissionmonthyear}{May 2026}
 \newcommand{\institutionname}{VIT Online Learning Program}
 \newcommand{\programname}{Master of Business Administration}
+\newcommand{\screenshotfigure}[4]{%
+    \begin{figure}[H]
+    \centering
+    \IfFileExists{#1}{%
+        \includegraphics[width=#4\textwidth]{#1}%
+    }{%
+        \fbox{\parbox[c][2.5in][c]{0.85\textwidth}{\centering Screenshot placeholder\\[4pt]\texttt{#1}}}%
+    }%
+    \caption{#2}
+    \label{#3}
+    \end{figure}
+}
 
 \begin{document}
 
@@ -79,10 +94,22 @@
 \input{frontmatter/declaration}
 \clearpage
 
+\input{frontmatter/certificate}
+\clearpage
+
+\input{frontmatter/acknowledgement}
+\clearpage
+
 \input{frontmatter/abstract}
 \clearpage
 
 \tableofcontents
+\clearpage
+
+\listoftables
+\clearpage
+
+\listoffigures
 \clearpage
 
 \pagenumbering{arabic}
@@ -90,6 +117,9 @@
 \input{chapters/chapter1}
 \input{chapters/chapter2}
 \input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+\input{chapters/references}
 \clearpage
 \input{annexure/questionnaire}
 

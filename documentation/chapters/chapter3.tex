@@ -98,6 +98,18 @@ The project was implemented using Python-based data collection and analysis scri
 
 These tools supported an end-to-end workflow consisting of review extraction, cleaning, filtering, deduplication, labeling, and downstream analysis. The use of code-based processing improved reproducibility, consistency, and scalability in comparison with manual review analysis.
 
+\section{Dashboard Development and Visualization}
+
+To make the analytical outputs easier to interpret from a managerial point of view, the project also developed an interactive dashboard using Streamlit. The dashboard serves as a decision-support layer over the final Zomato Google Play review dataset and presents sentiment metrics, theme-level summaries, benchmark comparisons, and competitor comparison views in a user-friendly format.
+
+The dashboard is organized into three major tabs: Zomato Analysis, Benchmark vs Paper, and Zomato vs Swiggy. Within the Zomato Analysis tab, the interface displays headline KPIs such as total rows, positive share, negative share, recent-period review volume, and number of tracked themes. It also includes charts for overall sentiment, theme-wise sentiment share, net sentiment, priority themes, recent theme views, and trend over time.
+
+An important interactive feature of the dashboard is the theme selector placed in the sidebar. This allows the analyst to move beyond an aggregate view and select a single theme, such as delivery, refund and cancellation, pricing and fees, or customer support, in order to study sentiment differences more precisely. In this way, the dashboard supports both high-level summary viewing and focused exploration of theme-specific issues.
+
+\screenshotfigure{figures/dashboard_overview.png}{Overview of the Streamlit dashboard showing headline KPIs and overall sentiment distribution for the Zomato Google Play dataset.}{fig:dashboard-overview}{0.95}
+
+\screenshotfigure{figures/dashboard_theme_filtered_delivery.png}{Example of dashboard filtering using the individual theme selector. The selected delivery theme allows focused viewing of sentiment share and net sentiment for that single issue category.}{fig:dashboard-theme-filter}{0.9}
+
 \section{Limitations of the Methodology}
 
 Although the methodology is suitable for large-scale app review analytics, it has certain limitations. First, the sentiment labels are based primarily on star ratings, which serve as a practical proxy rather than a perfect representation of textual sentiment. Some users may assign a high rating while expressing dissatisfaction in the text, or assign a low rating while mentioning both positive and negative experiences.

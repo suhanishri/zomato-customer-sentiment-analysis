@@ -1,0 +1,182 @@
+\chapter{Data Analysis and Results}
+
+\section{Introduction}
+
+This chapter presents the analytical findings derived from the Google Play Store review dataset for Zomato. The focus is on descriptive dataset characteristics, overall sentiment distribution, theme-wise sentiment patterns, recent-period customer feedback, and benchmark model performance. The purpose of this chapter is to move from data preparation to interpretation by showing what the review corpus reveals about customer perception of Zomato.
+
+\section{Dataset Profile}
+
+The final analytical dataset used for the Zomato study contains 41,597 Google Play Store reviews. All records belong to the Google Play platform, since the study was narrowed to a Google Play-only design for methodological consistency. The dataset contains 21,487 positive reviews, 18,923 negative reviews, and 1,187 neutral reviews. This distribution indicates that the dataset contains substantial polarity on both positive and negative sides, which makes it suitable for sentiment analysis as well as managerial interpretation.
+
+The theme distribution shows that customer discussion is concentrated in a few major service areas. Delivery is the largest theme with 16,106 reviews, followed by refund and cancellation with 8,545 reviews, app experience with 5,812 reviews, customer support with 3,191 reviews, and pricing and fees with 3,100 reviews. These theme sizes suggest that operational delivery performance, service recovery, and usability-related issues are central to customer perception of the brand.
+
+\begin{table}[h]
+\centering
+\caption{Dataset Profile of the Final Zomato Google Play Review Corpus}
+\begin{tabular}{lr}
+\toprule
+\textbf{Measure} & \textbf{Value} \\
+\midrule
+Total reviews in final dataset & 41,597 \\
+Positive labeled reviews & 21,487 \\
+Negative labeled reviews & 18,923 \\
+Neutral labeled reviews & 1,187 \\
+Recent reviews (2024 and later) & 15,320 \\
+Average text length (characters) & 271.97 \\
+Median text length (characters) & 260.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Overall Sentiment Distribution}
+
+Using the final best-performing model, the full dataset scoring process produced 20,587 positive predictions, 19,505 negative predictions, and 1,505 neutral predictions. This pattern suggests that customer sentiment toward Zomato is mixed rather than uniformly positive or negative. The volume of positive sentiment indicates that many customers continue to report satisfactory experiences, but the large negative share also shows that dissatisfaction remains substantial and strategically important.
+
+From a managerial perspective, this finding is important because it shows that Zomato's customer feedback environment is not dominated by one extreme. Instead, the brand operates in a competitive and sensitive service context where positive sentiment coexists with recurring operational complaints. Therefore, overall sentiment must be interpreted together with theme-level results rather than in isolation.
+
+\screenshotfigure{figures/dashboard_overview.png}{Dashboard view showing the headline KPIs and overall sentiment share of the final Zomato Google Play review dataset.}{fig:ch4-overall-dashboard}{0.95}
+
+\begin{table}[h]
+\centering
+\caption{Overall Predicted Sentiment Distribution}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Sentiment Category} & \textbf{Frequency} & \textbf{Share} \\
+\midrule
+Positive & 20,587 & 49.49\% \\
+Negative & 19,505 & 46.89\% \\
+Neutral & 1,505 & 3.62\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Theme-Wise Sentiment Analysis}
+
+Theme-wise analysis reveals the strongest customer pain points and strengths more clearly than overall sentiment alone. Among the major themes, refund and cancellation stands out as the most negative category. It contains 7,547 negative reviews out of 8,545 total reviews, producing a negative share of 88.32\% and a strongly unfavorable net sentiment of $-0.7863$. This indicates that refund-related issues represent the most severe and consistent source of customer dissatisfaction in the dataset.
+
+Customer support is another strongly negative area. Out of 3,191 reviews in this theme, 2,179 are negative, producing a negative share of 68.29\% and a net sentiment of $-0.3823$. This suggests that customers are not only dissatisfied with service issues themselves, but also with the way those issues are resolved. Order issue, although much smaller in volume, also shows a highly negative pattern with a negative share of 70.00\%.
+
+Delivery, while the largest theme overall, presents a more balanced picture. It contains 6,408 negative reviews and 8,964 positive reviews, giving it a positive net sentiment of 0.1587. This suggests that delivery is both a major strength and a major risk area. Because delivery generates the largest volume of customer discussion, even a moderate negative share translates into a very large operational problem in absolute terms.
+
+App experience appears as a comparatively strong area. Out of 5,812 reviews in this theme, 4,590 are positive, producing a positive share of 78.97\% and a net sentiment of 0.6063. This indicates that customers generally respond more favorably to the usability and interface aspects of the application than to post-order service handling or refund resolution. Pricing and fees, trust and reviews, and food quality appear in the middle range, with mixed but overall mildly positive net sentiment values.
+
+\screenshotfigure{figures/dashboard_theme_analysis.png}{Dashboard visualization of sentiment share by theme and net sentiment by theme. This view supports direct comparison of major issue categories affecting customer perception.}{fig:theme-analysis-dashboard}{0.95}
+
+\begin{table}[h]
+\centering
+\caption{Theme-Wise Sentiment Summary for Major Review Categories}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Theme} & \textbf{Total Rows} & \textbf{Negative Share} & \textbf{Positive Share} & \textbf{Net Sentiment} \\
+\midrule
+Delivery & 16,106 & 39.79\% & 55.66\% & 0.1587 \\
+Refund and cancellation & 8,545 & 88.32\% & 9.69\% & -0.7863 \\
+Customer support & 3,191 & 68.29\% & 30.05\% & -0.3823 \\
+Pricing and fees & 3,100 & 37.71\% & 54.71\% & 0.1700 \\
+Trust and reviews & 1,169 & 37.90\% & 57.14\% & 0.1925 \\
+App experience & 5,812 & 18.34\% & 78.97\% & 0.6063 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Priority Themes for Managerial Attention}
+
+To identify the most strategically important issue areas, priority was interpreted using both negative share and review volume. On this basis, refund and cancellation emerges as the highest-priority theme in the study. Its priority score is 7,546.94, which is the highest among all themes. Delivery follows closely with a priority score of 6,408.58, not because it is the most negative theme, but because of its very large review volume. Customer support is the third major priority theme with a score of 2,179.13.
+
+This interpretation is significant because managerial priority should not be based only on sentiment ratio or only on volume. A theme such as refund and cancellation is critical because it is overwhelmingly negative, while delivery is critical because it affects the largest number of customer experiences. Together, these results suggest that Zomato's strongest improvement opportunities lie in operational reliability, refund clarity, and service recovery.
+
+\screenshotfigure{figures/dashboard_priority_themes.png}{Priority theme table displayed in the dashboard. This view combines volume and negative share to highlight which issues demand the most managerial attention.}{fig:priority-theme-dashboard}{0.95}
+
+\begin{table}[h]
+\centering
+\caption{Top Priority Themes Based on Volume and Negative Share}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Theme} & \textbf{Negative Reviews} & \textbf{Total Rows} & \textbf{Negative Share} & \textbf{Priority Score} \\
+\midrule
+Refund and cancellation & 7,547 & 8,545 & 88.32\% & 7,546.94 \\
+Delivery & 6,408 & 16,106 & 39.79\% & 6,408.58 \\
+Customer support & 2,179 & 3,191 & 68.29\% & 2,179.13 \\
+Pricing and fees & 1,169 & 3,100 & 37.71\% & 1,169.01 \\
+App experience & 1,066 & 5,812 & 18.34\% & 1,065.92 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Recent-Period Analysis}
+
+To understand more current customer perception, a recent-period subset was analyzed for reviews falling within the 2024 and later bucket. This subset contains 15,320 reviews. The recent-period analysis broadly confirms the same structural pain points seen in the full dataset, but in some themes the negative concentration becomes even sharper.
+
+Refund and cancellation remains the most negative recent theme, with a negative share of 90.45\% and a net sentiment of $-0.8246$. Customer support also becomes more negative in the recent subset, with a negative share of 76.35\% and a net sentiment of $-0.5451$. Delivery continues to attract a large volume of feedback, with 6,103 recent reviews and a still-positive but weaker net sentiment of 0.0985 compared with the full dataset.
+
+App experience remains a relative strength in the recent period, with a positive share of 81.71\% and a net sentiment of 0.6586. This suggests that the application interface and usability continue to perform better than service-resolution areas. Overall, the recent-period analysis indicates that the most serious customer dissatisfaction drivers have not disappeared, and some may have become more concentrated in current feedback.
+
+\screenshotfigure{figures/dashboard_recent_theme_view.png}{Recent theme view for the 2024 and later subset. This table helps identify whether the same issue categories remain problematic in more current customer feedback.}{fig:recent-theme-dashboard}{0.95}
+
+\begin{table}[h]
+\centering
+\caption{Recent Period (2024+) Theme-Wise Sentiment Snapshot}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Theme} & \textbf{Total Rows} & \textbf{Negative Share} & \textbf{Positive Share} & \textbf{Net Sentiment} \\
+\midrule
+Delivery & 6,103 & 42.75\% & 52.60\% & 0.0985 \\
+Refund and cancellation & 2,617 & 90.45\% & 7.99\% & -0.8246 \\
+Customer support & 1,163 & 76.35\% & 21.84\% & -0.5451 \\
+Pricing and fees & 1,332 & 37.09\% & 52.03\% & 0.1494 \\
+App experience & 1,810 & 15.86\% & 81.71\% & 0.6586 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Trend Over Time}
+
+The year-wise sentiment view adds an additional interpretive layer by showing how customer sentiment share has varied across time. Rather than treating all reviews as one undifferentiated block, this temporal view helps track whether negative sentiment, positive sentiment, or neutral sentiment becomes more prominent during particular periods. Such a trend perspective is valuable because it allows the analyst to connect sentiment movement with changing business conditions, platform updates, operational issues, or shifts in customer expectations.
+
+\screenshotfigure{figures/dashboard_trend_over_time.png}{Trend over time view showing sentiment share by year. This chart provides a temporal perspective on how customer feedback has evolved across the review history.}{fig:trend-over-time-dashboard}{0.95}
+
+\section{Benchmark Model Comparison with the Prior Study}
+
+The study also compared its sentiment modeling performance with the prior benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier}. The paper reported a Random Forest accuracy of 92.44\%, along with strong average precision and recall values. However, this paper used a different dataset and a different label-construction process, so the comparison is methodological rather than strictly equivalent.
+
+Within the present project, a paper-aligned benchmark was recreated using a TF-IDF plus Random Forest pipeline on the Google Play-only Zomato dataset. This recreated Random Forest model achieved an accuracy of 88.58\%. The best-performing model in the current study, named \textit{SentiLens}, achieved an accuracy of 90.17\%, outperforming the recreated Random Forest benchmark on the same holdout split.
+
+This result is important for two reasons. First, it demonstrates that the current study does not rely only on one arbitrary model choice; it evaluates multiple models and selects the best-performing one on the actual project dataset. Second, it shows that while the benchmark paper remains useful as a literature reference, the present study has developed a stronger model for its own data context. At the same time, the project goes beyond classification accuracy by linking sentiment patterns to managerial themes and decision-support insights.
+
+\screenshotfigure{figures/dashboard_benchmark_overview.png}{Benchmark dashboard comparing the paper-reported Random Forest results, the recreated Random Forest benchmark, and the best-performing model SentiLens.}{fig:benchmark-overview-dashboard}{0.95}
+
+\screenshotfigure{figures/dashboard_benchmark_table.png}{Benchmark comparison table showing model-wise performance metrics across the paper-reported result, recreated Random Forest, and SentiLens.}{fig:benchmark-table-dashboard}{0.95}
+
+\screenshotfigure{figures/dashboard_benchmark_advantages.png}{Dashboard view highlighting specific performance advantages of SentiLens over the benchmark Random Forest models.}{fig:benchmark-advantages-dashboard}{0.95}
+
+\screenshotfigure{figures/dashboard_benchmark_examples.png}{Illustrative holdout examples where SentiLens outperformed the recreated Random Forest benchmark. This view supports a more interpretable comparison beyond summary metrics alone.}{fig:benchmark-examples-dashboard}{0.95}
+
+\begin{table}[h]
+\centering
+\caption{Benchmark Comparison with the Prior Random Forest Study}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Model / Study} & \textbf{Accuracy} & \textbf{Average Precision} & \textbf{Average Recall} \\
+\midrule
+Random Forest (paper-reported) & 92.44\% & 0.9300 & 0.8700 \\
+TF-IDF + Random Forest (recreated) & 88.58\% & 0.6519 & 0.6135 \\
+SentiLens (best model in current study) & 90.17\% & 0.6771 & 0.6868 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Interpretive Summary of Results}
+
+Taken together, the results show that customer sentiment toward Zomato is shaped less by broad abstract perception and more by a few recurring operational themes. Refund and cancellation is the clearest source of dissatisfaction, customer support amplifies this dissatisfaction through poor issue resolution, and delivery acts as the highest-volume service driver. By contrast, app experience emerges as a relative strength, suggesting that Zomato's digital interface performs better than certain post-order service processes.
+
+These results also support the broader direction of the study: sentiment analysis becomes most useful when combined with theme identification. Overall sentiment alone would show that the brand receives both positive and negative feedback, but theme-wise analysis explains precisely where the business is performing well and where it is exposed to dissatisfaction. This makes the findings directly relevant for brand strategy, customer experience management, and service improvement planning.
+
+\section{Competitor Benchmark Snapshot}
+
+To add market context to the Zomato findings, the dashboard also includes a competitor benchmark view comparing Zomato and Swiggy using Google Play-only data and the same final weak sentiment labels. This comparison makes it possible to evaluate whether Zomato's overall negative and positive sentiment shares are relatively stronger or weaker than those of a major competitor under a consistent analytical framework.
+
+The competitor comparison dashboard also supports theme-level interpretation. In addition to viewing brand-level sentiment shares, the analyst can compare negative share and net sentiment across individual themes for both brands. This is useful because a brand may perform relatively better in one dimension, such as app experience, while performing worse in another, such as refund handling or customer support.
+
+\screenshotfigure{figures/dashboard_competitor_overview.png}{Competitor benchmark dashboard comparing Zomato and Swiggy on overall negative and positive sentiment shares using Google Play-only data.}{fig:competitor-overview-dashboard}{0.95}
+
+\screenshotfigure{figures/dashboard_competitor_theme_comparison.png}{Theme-level competitor comparison showing negative share and net sentiment by theme for Zomato and Swiggy. This view allows individual issue categories to be compared across brands.}{fig:competitor-theme-dashboard}{0.95}
