@@ -195,6 +195,26 @@ Within the present project, a paper-aligned benchmark was recreated using a TF-I
 
 This result is important for two reasons. First, it demonstrates that the current study does not rely only on one arbitrary model choice; it evaluates multiple models and selects the best-performing one on the actual project dataset. Second, it shows that while the benchmark paper remains useful as a literature reference, the present study has developed a stronger model for its own data context. At the same time, the project goes beyond classification accuracy by linking sentiment patterns to managerial themes and decision-support insights.
 
+\begin{table}[h]
+\centering
+\caption{Structured Comparison for the Prior Benchmark Study and the Current Project Models}
+\small
+\begin{tabular}{L{0.24\textwidth}L{0.22\textwidth}L{0.18\textwidth}L{0.20\textwidth}}
+\toprule
+\textbf{Comparison Dimension} & \textbf{Paper-Reported Random Forest} & \textbf{Recreated TF-IDF + Random Forest} & \textbf{SentiLens (TF-IDF + Logistic Regression)} \\
+\midrule
+Study source & Jonathan et al. (2019) & Current project benchmark & Current project final model \\
+Dataset context & Zomato Bangalore restaurant review context & Google Play-only Zomato dataset & Google Play-only Zomato dataset \\
+Role in comparison & Literature reference point & Paper-style internal benchmark & Best-performing final model \\
+Accuracy & 92.44\% & 88.58\% & 90.17\% \\
+Average precision & 0.9300 & 0.6519 & 0.6771 \\
+Average recall & 0.8700 & 0.6135 & 0.6868 \\
+Interpretation & Published benchmark result & Closest recreation of the paper model direction on our data & Final selected model used for scoring and dashboard interpretation \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
+
 \screenshotfigure{figures/dashboard_benchmark_overview.png}{Benchmark dashboard comparing the paper-reported Random Forest results, the recreated Random Forest benchmark, and the best-performing model SentiLens.}{fig:benchmark-overview-dashboard}{0.95}
 
 \screenshotfigure{figures/dashboard_benchmark_table.png}{Benchmark comparison table showing model-wise performance metrics across the paper-reported result, recreated Random Forest, and SentiLens.}{fig:benchmark-table-dashboard}{0.95}
