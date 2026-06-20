@@ -34,21 +34,24 @@ From a management perspective, recent-period persistence matters because it indi
 
 The benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier} \cite{jonathan2019}, was useful as a reference point for model-oriented comparison. That study is more narrowly focused on sentiment classification performance, whereas the present study is broader in managerial scope. It combines sentiment modeling with theme analysis, priority interpretation, competitor context, and dashboard-oriented reporting.
 
-The present project recreated a paper-aligned Random Forest benchmark on the Google Play-only Zomato dataset and compared it with the best-performing model in the current study. The recreated Random Forest achieved an accuracy of 88.58\%, while the best model, \textit{SentiLens}, achieved an accuracy of 90.17\%. Since Random Forest is itself a well-established ensemble method \cite{breiman2001}, this benchmark provides a credible comparison point. Although the result does not imply a direct one-to-one superiority over the published paper, it does show that the present study developed a stronger model for its own dataset context and moved beyond pure accuracy toward business interpretation.
+The present project recreated a paper-aligned Random Forest benchmark on the Google Play-only Zomato dataset and then compared it with the best-performing model in the current study. The recreated \textit{TF-IDF + Random Forest} model achieved an accuracy of 88.58\%, while the final best model, \textit{SentiLens}, built on \textit{TF-IDF + Logistic Regression}, achieved an accuracy of 90.17\%. Since Random Forest is itself a well-established ensemble method \cite{breiman2001}, the recreated benchmark provides a credible midpoint between the literature paper and our final optimized model. Although the result does not imply a direct one-to-one superiority over the published paper, it does show that the present study developed a stronger model for its own dataset context and moved beyond pure accuracy toward business interpretation.
 
 \begin{table}[h]
 \centering
-\caption{Comparative View of the Benchmark Paper and the Present Study}
+\caption{Three-Way Benchmark Comparison Across the Paper Model, Recreated Random Forest, and Final SentiLens Model}
 \small
-\begin{tabular}{L{0.24\textwidth}L{0.23\textwidth}L{0.18\textwidth}L{0.22\textwidth}}
+\begin{tabular}{L{0.26\textwidth}L{0.18\textwidth}L{0.18\textwidth}L{0.20\textwidth}}
 \toprule
-\textbf{Comparison Dimension} & \textbf{Benchmark Paper} & \textbf{Present Study} & \textbf{Interpretation} \\
+\textbf{Comparison Dimension} & \textbf{Paper-Reported Model} & \textbf{Our Recreated Benchmark} & \textbf{Our Final Model} \\
 \midrule
-Primary focus & Sentiment classification accuracy & Sentiment, themes, benchmarking, dashboard insights & Present study is broader in business scope \\
-Core benchmark model & Random Forest classifier & Multiple models including SentiLens and recreated RF & Present study uses a comparative model-selection approach \\
-Data context & Zomato Bangalore restaurant review context & Zomato Google Play-only review dataset & The two studies are methodologically comparable, not identical \\
-Reported best accuracy & 92.44\% (paper-reported RF) & 90.17\% (SentiLens on our data) & Accuracy values should be read in relation to different datasets \\
-Managerial interpretation & Limited & Strong emphasis on issue themes and decision support & Present study extends beyond model output into business actionability \\
+Model label & Random Forest classifier & TF-IDF + Random Forest & SentiLens (TF-IDF + Logistic Regression) \\
+Source & Jonathan et al. (2019) & Recreated on our dataset & Final selected model in our study \\
+Dataset context & Zomato Bangalore restaurant review context & Google Play-only Zomato dataset & Google Play-only Zomato dataset \\
+Primary purpose & Literature benchmark & Like-for-like internal benchmark against the paper style & Best-performing practical model for final analysis \\
+Accuracy & 92.44\% & 88.58\% & 90.17\% \\
+Average precision & 0.9300 & 0.6519 & 0.6771 \\
+Average recall & 0.8700 & 0.6135 & 0.6868 \\
+Interpretive role & Published reference point & Closest reproduction of the paper's model direction on our data & Final model used for downstream scoring, dashboarding, and interpretation \\
 \bottomrule
 \end{tabular}
 \normalsize
