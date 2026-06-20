@@ -2,7 +2,7 @@
 
 \section{Introduction}
 
-This chapter explains the methodology adopted for analyzing customer sentiment toward Zomato using Google Play Store reviews. It presents the research design, data source, data collection approach, preprocessing stages, dataset construction process, sentiment labeling logic, thematic classification logic, and analytical framework used in the study. Since the project is based on digital review data rather than questionnaire responses, the methodology is structured around secondary data collection and NLP-oriented text analysis.
+This chapter explains the methodology adopted for analyzing customer sentiment toward Zomato using Google Play Store reviews. It presents the research design, data source, data collection approach, preprocessing stages, dataset construction process, sentiment labeling logic, thematic classification logic, and analytical framework used in the study. Since the project is based on digital review data rather than questionnaire responses, the methodology is structured around secondary data collection and NLP-oriented text analysis \cite{pagano2013,martin2017}.
 
 \section{Research Design}
 
@@ -12,7 +12,7 @@ The study is also applied in nature because the objective is not limited to theo
 
 \section{Source of Data}
 
-The study is based entirely on secondary data collected from the Google Play Store. The primary source consists of user reviews posted for the Zomato mobile application. These reviews include both star ratings and textual comments, making them suitable for sentiment and thematic analysis.
+The study is based entirely on secondary data collected from the Google Play Store. The primary source consists of user reviews posted for the Zomato mobile application. These reviews include both star ratings and textual comments, making them suitable for sentiment and thematic analysis \cite{pagano2013,guzman2017}.
 
 To improve coverage and reduce sorting bias, review data was collected under multiple retrieval settings. The collection process included three sort modes: newest, most relevant, and rating-based retrieval. Reviews were also collected across English and Hindi language settings. This multi-source retrieval strategy helped capture recent reviews, highly engaged issue-focused reviews, and strongly positive rating-based reviews within the same research corpus.
 
@@ -90,7 +90,7 @@ This approach made theme classification transparent and reproducible, though it 
 
 The analytical approach of the study combined descriptive review analytics with NLP-oriented labeling and thematic interpretation. After dataset construction, reviews were analyzed in terms of sentiment distribution, theme frequency, and theme-wise sentiment patterns. The emphasis of the study was not only on counting positive, negative, and neutral reviews, but also on identifying which themes most strongly influenced customer perception.
 
-The broader project also included a baseline machine learning workflow using TF-IDF vectorization and logistic regression for sentiment modeling. However, within the scope of the present paper, the central methodology is the construction and analysis of a cleaned Play Store review dataset using rating-proxy sentiment labels and rule-based thematic categorization. This approach keeps the methodology aligned with the business objective of understanding customer perception in a structured and interpretable way.
+The broader project also included a baseline machine learning workflow using TF-IDF vectorization and logistic regression for sentiment modeling. TF-IDF style term weighting is a well-established approach in text retrieval and text classification, while logistic regression remains a practical and interpretable classification method for categorical outcomes \cite{salton1988,hosmer2013}. The benchmark stage also included a Random Forest comparison to maintain alignment with the earlier Zomato benchmark study \cite{breiman2001,jonathan2019}. However, within the scope of the present paper, the central methodology is the construction and analysis of a cleaned Play Store review dataset using rating-proxy sentiment labels and rule-based thematic categorization. This approach keeps the methodology aligned with the business objective of understanding customer perception in a structured and interpretable way.
 
 \section{Tools and Technologies Used}
 

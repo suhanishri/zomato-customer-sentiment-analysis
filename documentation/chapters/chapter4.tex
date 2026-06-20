@@ -137,9 +137,9 @@ The year-wise sentiment view adds an additional interpretive layer by showing ho
 
 \section{Benchmark Model Comparison with the Prior Study}
 
-The study also compared its sentiment modeling performance with the prior benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier}. The paper reported a Random Forest accuracy of 92.44\%, along with strong average precision and recall values. However, this paper used a different dataset and a different label-construction process, so the comparison is methodological rather than strictly equivalent.
+The study also compared its sentiment modeling performance with the prior benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier} \cite{jonathan2019}. The paper reported a Random Forest accuracy of 92.44\%, along with strong average precision and recall values. However, this paper used a different dataset and a different label-construction process, so the comparison is methodological rather than strictly equivalent.
 
-Within the present project, a paper-aligned benchmark was recreated using a TF-IDF plus Random Forest pipeline on the Google Play-only Zomato dataset. This recreated Random Forest model achieved an accuracy of 88.58\%. The best-performing model in the current study, named \textit{SentiLens}, achieved an accuracy of 90.17\%, outperforming the recreated Random Forest benchmark on the same holdout split.
+Within the present project, a paper-aligned benchmark was recreated using a TF-IDF plus Random Forest pipeline on the Google Play-only Zomato dataset. Random Forest remains a widely recognized ensemble method in classification research \cite{breiman2001}. This recreated Random Forest model achieved an accuracy of 88.58\%. The best-performing model in the current study, named \textit{SentiLens}, achieved an accuracy of 90.17\%, outperforming the recreated Random Forest benchmark on the same holdout split.
 
 This result is important for two reasons. First, it demonstrates that the current study does not rely only on one arbitrary model choice; it evaluates multiple models and selects the best-performing one on the actual project dataset. Second, it shows that while the benchmark paper remains useful as a literature reference, the present study has developed a stronger model for its own data context. At the same time, the project goes beyond classification accuracy by linking sentiment patterns to managerial themes and decision-support insights.
 
@@ -176,6 +176,21 @@ These results also support the broader direction of the study: sentiment analysi
 To add market context to the Zomato findings, the dashboard also includes a competitor benchmark view comparing Zomato and Swiggy using Google Play-only data and the same final weak sentiment labels. This comparison makes it possible to evaluate whether Zomato's overall negative and positive sentiment shares are relatively stronger or weaker than those of a major competitor under a consistent analytical framework.
 
 The competitor comparison dashboard also supports theme-level interpretation. In addition to viewing brand-level sentiment shares, the analyst can compare negative share and net sentiment across individual themes for both brands. This is useful because a brand may perform relatively better in one dimension, such as app experience, while performing worse in another, such as refund handling or customer support.
+
+\begin{table}[h]
+\centering
+\caption{Brand-Level Competitor Comparison: Zomato versus Swiggy}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Brand} & \textbf{Total Rows} & \textbf{Negative Rows} & \textbf{Negative Share} & \textbf{Positive Share} & \textbf{Net Sentiment} \\
+\midrule
+Zomato & 41,597 & 18,923 & 45.49\% & 51.66\% & 0.0616 \\
+Swiggy & 45,538 & 24,865 & 54.60\% & 43.49\% & -0.1111 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At the brand level, Zomato performs better than Swiggy within the present Google Play-only comparison frame. Zomato shows a lower negative share and a higher positive share, resulting in a positive net sentiment value, while Swiggy shows a negative overall net sentiment. Theme-level comparison further suggests that Zomato holds a relative advantage in several major issue areas, including delivery, refund and cancellation, app experience, and customer support. This does not imply that Zomato is free from serious service pain points; rather, it indicates that its sentiment profile is comparatively stronger than the selected competitor when both brands are evaluated under the same labeling logic.
 
 \screenshotfigure{figures/dashboard_competitor_overview.png}{Competitor benchmark dashboard comparing Zomato and Swiggy on overall negative and positive sentiment shares using Google Play-only data.}{fig:competitor-overview-dashboard}{0.95}
 

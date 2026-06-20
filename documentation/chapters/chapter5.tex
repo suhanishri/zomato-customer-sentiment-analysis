@@ -1,4 +1,4 @@
-\chapter{Findings and Conclusion}
+\chapter{Findings, Recommendations and Conclusion}
 
 \section{Introduction}
 
@@ -20,9 +20,9 @@ At the same time, the study reveals that not all aspects of Zomato are weak. App
 
 \section{Comparison with the Benchmark Paper}
 
-The benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier}, was useful as a reference point for model-oriented comparison. That study is more narrowly focused on sentiment classification performance, whereas the present study is broader in managerial scope. It combines sentiment modeling with theme analysis, priority interpretation, competitor context, and dashboard-oriented reporting.
+The benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier} \cite{jonathan2019}, was useful as a reference point for model-oriented comparison. That study is more narrowly focused on sentiment classification performance, whereas the present study is broader in managerial scope. It combines sentiment modeling with theme analysis, priority interpretation, competitor context, and dashboard-oriented reporting.
 
-The present project recreated a paper-aligned Random Forest benchmark on the Google Play-only Zomato dataset and compared it with the best-performing model in the current study. The recreated Random Forest achieved an accuracy of 88.58\%, while the best model, \textit{SentiLens}, achieved an accuracy of 90.17\%. Although this does not imply a direct one-to-one superiority over the published paper, it does show that the present study developed a stronger model for its own dataset context and moved beyond pure accuracy toward business interpretation.
+The present project recreated a paper-aligned Random Forest benchmark on the Google Play-only Zomato dataset and compared it with the best-performing model in the current study. The recreated Random Forest achieved an accuracy of 88.58\%, while the best model, \textit{SentiLens}, achieved an accuracy of 90.17\%. Since Random Forest is itself a well-established ensemble method \cite{breiman2001}, this benchmark provides a credible comparison point. Although the result does not imply a direct one-to-one superiority over the published paper, it does show that the present study developed a stronger model for its own dataset context and moved beyond pure accuracy toward business interpretation.
 
 \section{Managerial Implications}
 
@@ -32,6 +32,18 @@ Second, customer support should be strengthened as a service recovery function. 
 
 Third, delivery performance should remain a central operational focus. Since delivery drives the largest share of customer discussion, even moderate service inconsistency can create a large reputational effect. Finally, the positive performance of app experience suggests that Zomato can build on an existing digital strength, but this strength should be complemented by stronger execution in operational and support-related areas.
 
+\section{Recommendations}
+
+Based on the findings of the study, the following recommendations are proposed for managerial discussion and future action:
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Redesign refund and cancellation workflows:} Refund communication should be clearer, resolution times should be shorter, and status visibility should be improved so that customers do not feel ignored after a failed order or disputed charge.
+    \item \textbf{Strengthen customer support escalation logic:} Support teams should be better equipped to resolve delivery and refund complaints without repeated transfers or delayed responses. Faster escalation and clearer issue ownership can reduce dissatisfaction intensity.
+    \item \textbf{Prioritize delivery reliability in high-volume touchpoints:} Since delivery is the largest theme in the dataset, even incremental operational improvements in timeliness, tracking, and order fulfillment can have a large reputational impact.
+    \item \textbf{Use theme-wise review monitoring as a recurring management practice:} Instead of observing only aggregate ratings, Zomato should continuously track theme-level sentiment trends so that major service failures are identified early.
+    \item \textbf{Leverage app-experience strengths in brand communication:} Because app usability performs relatively well, Zomato can reinforce this positive perception while working to close the gap in post-order service handling and issue resolution.
+\end{enumerate}
+
 \section{Limitations of the Study}
 
 The study has several limitations. First, the dataset is limited to Google Play Store reviews and therefore does not represent the complete universe of customer opinion across all digital channels. Second, sentiment labels are derived using a rating-based proxy, which is practical and scalable but not a perfect representation of the full textual meaning of every review.
@@ -40,6 +52,6 @@ Third, the theme assignment method uses deterministic keyword rules and assigns 
 
 \section{Conclusion}
 
-This study demonstrates that Google Play Store review analytics can provide meaningful insight into customer perception of Zomato. By combining sentiment analysis with theme-based interpretation, the project identifies where customer dissatisfaction is concentrated and where the brand retains relative strengths. Refund and cancellation, customer support, and delivery emerge as the most important areas requiring managerial attention, while app experience stands out as a comparatively positive aspect of the customer journey.
+This study demonstrates that Google Play Store review analytics can provide meaningful insight into customer perception of Zomato. By combining sentiment analysis with theme-based interpretation, the project identifies where customer dissatisfaction is concentrated and where the brand retains relative strengths. Refund and cancellation, customer support, and delivery emerge as the most important areas requiring managerial attention, while app experience stands out as a comparatively positive aspect of the customer journey \cite{lemon2016,keller2013}.
 
-The broader contribution of the study lies in showing that NLP-based review analysis is useful not only for technical classification, but also for strategic decision support. When properly structured, app review data can help convert large-scale customer feedback into actionable evidence for improving brand strategy, customer experience, and service performance.
+The broader contribution of the study lies in showing that NLP-based review analysis is useful not only for technical classification, but also for strategic decision support. When properly structured, app review data can help convert large-scale customer feedback into actionable evidence for improving brand strategy, customer experience, and service performance \cite{liu2012,verhoef2010}.
