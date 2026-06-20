@@ -36,6 +36,24 @@ The benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Ba
 
 The present project recreated a paper-aligned Random Forest benchmark on the Google Play-only Zomato dataset and compared it with the best-performing model in the current study. The recreated Random Forest achieved an accuracy of 88.58\%, while the best model, \textit{SentiLens}, achieved an accuracy of 90.17\%. Since Random Forest is itself a well-established ensemble method \cite{breiman2001}, this benchmark provides a credible comparison point. Although the result does not imply a direct one-to-one superiority over the published paper, it does show that the present study developed a stronger model for its own dataset context and moved beyond pure accuracy toward business interpretation.
 
+\begin{table}[h]
+\centering
+\caption{Comparative View of the Benchmark Paper and the Present Study}
+\small
+\begin{tabular}{L{0.24\textwidth}L{0.23\textwidth}L{0.18\textwidth}L{0.22\textwidth}}
+\toprule
+\textbf{Comparison Dimension} & \textbf{Benchmark Paper} & \textbf{Present Study} & \textbf{Interpretation} \\
+\midrule
+Primary focus & Sentiment classification accuracy & Sentiment, themes, benchmarking, dashboard insights & Present study is broader in business scope \\
+Core benchmark model & Random Forest classifier & Multiple models including SentiLens and recreated RF & Present study uses a comparative model-selection approach \\
+Data context & Zomato Bangalore restaurant review context & Zomato Google Play-only review dataset & The two studies are methodologically comparable, not identical \\
+Reported best accuracy & 92.44\% (paper-reported RF) & 90.17\% (SentiLens on our data) & Accuracy values should be read in relation to different datasets \\
+Managerial interpretation & Limited & Strong emphasis on issue themes and decision support & Present study extends beyond model output into business actionability \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
+
 \section{Competitor Context and Relative Market Signal}
 
 The competitor comparison with Swiggy adds useful market context to the interpretation of results. Zomato's lower negative share and higher positive share indicate that, within the Google Play-only comparison frame, its sentiment profile is relatively stronger overall. This matters because a brand's performance should not be judged only in isolation; it should also be viewed relative to customer expectations shaped by competing platforms.
