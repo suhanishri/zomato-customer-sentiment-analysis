@@ -96,7 +96,7 @@ The broader project also included a baseline machine learning workflow using TF-
 
 The project was implemented using Python-based data collection and analysis scripts. Review collection was performed through a Google Play scraping library, while data cleaning and dataset construction were handled through custom Python workflows. Text preprocessing, transformation, and data management were carried out using standard data analysis libraries, and the broader project environment also included dashboard components for visualization and interpretation.
 
-These tools supported an end-to-end workflow consisting of review extraction, cleaning, filtering, deduplication, labeling, and downstream analysis. The use of code-based processing improved reproducibility, consistency, and scalability in comparison with manual review analysis.
+These tools supported an end-to-end workflow consisting of review extraction, cleaning, filtering, deduplication, labeling, and downstream analysis. The use of code-based processing improved reproducibility, consistency, and scalability in comparison with manual review analysis. To support transparency and reproducibility, the project codebase, analytical scripts, and dashboard assets were organized in a version-controlled GitHub repository \cite{zomatorepo2026}.
 
 \section{Dashboard Development and Visualization}
 
@@ -110,11 +110,11 @@ An important interactive feature of the dashboard is the theme selector placed i
 
 \screenshotfigure{figures/dashboard_theme_filtered_delivery.png}{Example of dashboard filtering using the individual theme selector. The selected delivery theme allows focused viewing of sentiment share and net sentiment for that single issue category.}{fig:dashboard-theme-filter}{0.9}
 
-\section{Limitations of the Methodology}
+\section{Methodological Considerations}
 
-Although the methodology is suitable for large-scale app review analytics, it has certain limitations. First, the sentiment labels are based primarily on star ratings, which serve as a practical proxy rather than a perfect representation of textual sentiment. Some users may assign a high rating while expressing dissatisfaction in the text, or assign a low rating while mentioning both positive and negative experiences.
+The methodology adopted in this study is well suited to large-scale app review analytics, but it should be understood within the practical choices made for clarity, scale, and reproducibility. First, the sentiment labels are based primarily on star ratings, which provide a practical platform-native proxy for customer sentiment. In some cases, users may assign a high rating while expressing dissatisfaction in the text, or assign a low rating while mentioning both positive and negative experiences.
 
-Second, the theme classification method uses deterministic keyword rules and assigns only one final theme per review. This improves interpretability but may oversimplify reviews that mention multiple overlapping issues. Third, Google Play Store reviews represent only one digital feedback channel and therefore do not capture the complete universe of customer opinion. Despite these limitations, the methodology is appropriate for the present study because it provides a structured, transparent, and business-relevant way to analyze large volumes of Zomato customer feedback.
+Second, the theme classification method uses deterministic keyword rules and assigns only one final theme per review. This improves interpretability and makes the classification logic easy to explain, though it may simplify reviews that mention multiple overlapping issues. Third, Google Play Store reviews represent one important digital feedback channel and therefore offer a focused rather than universal view of customer opinion. Even with these considerations, the methodology remains appropriate for the present study because it provides a structured, transparent, and business-relevant way to analyze large volumes of Zomato customer feedback.
 
 \section{Chapter Summary}
 

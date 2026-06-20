@@ -1,8 +1,8 @@
-\chapter{Findings, Recommendations and Conclusion}
+\chapter{Findings and Discussion}
 
 \section{Introduction}
 
-This chapter synthesizes the major findings of the study and connects them to managerial implications for Zomato's brand strategy and customer experience. The chapter also explains how the results compare with the benchmark paper and identifies the limitations of the current research design.
+This chapter synthesizes the major findings of the study and interprets them in relation to customer experience, service execution, and brand perception. The purpose of the chapter is to move from numerical results to business meaning by showing what the observed sentiment and theme patterns imply about Zomato's current customer voice landscape.
 
 \section{Major Findings}
 
@@ -18,40 +18,36 @@ The findings suggest that customer pain points are concentrated in high-impact o
 
 At the same time, the study reveals that not all aspects of Zomato are weak. App experience demonstrates a strong positive pattern, which suggests that the platform has already built a comparatively favorable digital usage experience. This creates an important managerial contrast: the customer-facing interface performs relatively well, but trust and loyalty can still be damaged when service execution or issue resolution fails. In strategic terms, this means that Zomato's challenge is not only attracting and enabling users through a good application, but also maintaining confidence through operational reliability and fair post-order handling.
 
+\section{Discussion of Theme-Wise Business Meaning}
+
+The theme structure of the dataset shows that customer perception is not shaped by one single issue. Instead, it is influenced by a layered service experience in which different themes play different strategic roles. Delivery functions as a scale theme because it attracts the highest review volume. Refund and cancellation functions as a trust theme because it is tied to fairness, transparency, and recovery after service failure. Customer support functions as a resolution theme because it affects how customers interpret the firm's response when something goes wrong.
+
+This distinction is useful from a business standpoint. High-volume themes require operational consistency, while high-negativity themes require service recovery redesign. A review analytics system therefore becomes more valuable when it does not merely label text as positive or negative, but also reveals which themes are responsible for dissatisfaction and whether those themes reflect execution failure, expectation mismatch, or recovery weakness. The present results support exactly this type of interpretation.
+
+\section{Discussion of Recent-Period Patterns}
+
+The recent-period subset adds an important practical layer to the findings. It shows that the major issue areas identified in the full dataset are not only historical artifacts. Refund and cancellation, customer support, and delivery continue to appear prominently in the 2024 and later review subset. This suggests that the major pain points remain relevant in current customer feedback rather than being confined to an older phase of the platform's service history.
+
+From a management perspective, recent-period persistence matters because it indicates that certain problems are structurally recurring. If negative sentiment had fallen sharply in current reviews, the interpretation would have been more optimistic. Instead, the continued concentration of negative feedback in service recovery and support-related themes suggests that these issues require sustained process improvement rather than isolated corrective actions.
+
 \section{Comparison with the Benchmark Paper}
 
 The benchmark paper, \textit{Sentiment Analysis of Customer Reviews in Zomato Bangalore Restaurants Using Random Forest Classifier} \cite{jonathan2019}, was useful as a reference point for model-oriented comparison. That study is more narrowly focused on sentiment classification performance, whereas the present study is broader in managerial scope. It combines sentiment modeling with theme analysis, priority interpretation, competitor context, and dashboard-oriented reporting.
 
 The present project recreated a paper-aligned Random Forest benchmark on the Google Play-only Zomato dataset and compared it with the best-performing model in the current study. The recreated Random Forest achieved an accuracy of 88.58\%, while the best model, \textit{SentiLens}, achieved an accuracy of 90.17\%. Since Random Forest is itself a well-established ensemble method \cite{breiman2001}, this benchmark provides a credible comparison point. Although the result does not imply a direct one-to-one superiority over the published paper, it does show that the present study developed a stronger model for its own dataset context and moved beyond pure accuracy toward business interpretation.
 
-\section{Managerial Implications}
+\section{Competitor Context and Relative Market Signal}
 
-The findings of the study have clear managerial relevance. First, refund and cancellation processes should be treated as a top strategic priority because they combine high volume with extremely negative sentiment. Clearer refund policies, faster resolution cycles, and more transparent communication may help reduce a major source of dissatisfaction.
+The competitor comparison with Swiggy adds useful market context to the interpretation of results. Zomato's lower negative share and higher positive share indicate that, within the Google Play-only comparison frame, its sentiment profile is relatively stronger overall. This matters because a brand's performance should not be judged only in isolation; it should also be viewed relative to customer expectations shaped by competing platforms.
 
-Second, customer support should be strengthened as a service recovery function. When support interactions fail, customer dissatisfaction deepens and may shift from a single transaction problem to broader distrust toward the brand. Improved support responsiveness, escalation handling, and issue ownership would likely improve customer perception more effectively than cosmetic brand communication alone.
+At the same time, relative advantage should not be confused with the absence of dissatisfaction. The competitor view shows that Zomato may be performing better than Swiggy on several major themes while still facing substantial complaints in refund handling, customer support, and delivery. Thus, the practical lesson is not complacency but prioritization: the comparison suggests where Zomato is ahead and where it still needs meaningful operational improvement.
 
-Third, delivery performance should remain a central operational focus. Since delivery drives the largest share of customer discussion, even moderate service inconsistency can create a large reputational effect. Finally, the positive performance of app experience suggests that Zomato can build on an existing digital strength, but this strength should be complemented by stronger execution in operational and support-related areas.
+\section{Role of the Dashboard in Interpreting Findings}
 
-\section{Recommendations}
+An additional contribution of the project lies in how the analytical results were made interpretable through the dashboard layer. The dashboard translates the dataset into business-facing views such as overall sentiment, theme-wise net sentiment, priority themes, recent-period analysis, benchmark comparison, and competitor comparison. This is useful because managers may not work directly with raw model outputs or review tables.
 
-Based on the findings of the study, the following recommendations are proposed for managerial discussion and future action:
+The theme selector is especially important in this regard. It allows the decision-maker to move from summary-level insight to issue-level investigation. For example, a manager concerned with delivery performance can isolate that theme and immediately view sentiment share, net sentiment, recent-period movement, and competitor comparison. This makes the research more actionable than a static accuracy report or one-time analytical summary.
 
-\begin{enumerate}[label=\arabic*.]
-    \item \textbf{Redesign refund and cancellation workflows:} Refund communication should be clearer, resolution times should be shorter, and status visibility should be improved so that customers do not feel ignored after a failed order or disputed charge.
-    \item \textbf{Strengthen customer support escalation logic:} Support teams should be better equipped to resolve delivery and refund complaints without repeated transfers or delayed responses. Faster escalation and clearer issue ownership can reduce dissatisfaction intensity.
-    \item \textbf{Prioritize delivery reliability in high-volume touchpoints:} Since delivery is the largest theme in the dataset, even incremental operational improvements in timeliness, tracking, and order fulfillment can have a large reputational impact.
-    \item \textbf{Use theme-wise review monitoring as a recurring management practice:} Instead of observing only aggregate ratings, Zomato should continuously track theme-level sentiment trends so that major service failures are identified early.
-    \item \textbf{Leverage app-experience strengths in brand communication:} Because app usability performs relatively well, Zomato can reinforce this positive perception while working to close the gap in post-order service handling and issue resolution.
-\end{enumerate}
+\section{Chapter Summary}
 
-\section{Limitations of the Study}
-
-The study has several limitations. First, the dataset is limited to Google Play Store reviews and therefore does not represent the complete universe of customer opinion across all digital channels. Second, sentiment labels are derived using a rating-based proxy, which is practical and scalable but not a perfect representation of the full textual meaning of every review.
-
-Third, the theme assignment method uses deterministic keyword rules and assigns a single dominant theme to each review. This improves transparency but may simplify reviews that mention multiple issues at the same time. Fourth, the benchmark comparison with the previous paper is informative but not strictly equivalent because the two studies rely on different datasets and data-construction procedures.
-
-\section{Conclusion}
-
-This study demonstrates that Google Play Store review analytics can provide meaningful insight into customer perception of Zomato. By combining sentiment analysis with theme-based interpretation, the project identifies where customer dissatisfaction is concentrated and where the brand retains relative strengths. Refund and cancellation, customer support, and delivery emerge as the most important areas requiring managerial attention, while app experience stands out as a comparatively positive aspect of the customer journey \cite{lemon2016,keller2013}.
-
-The broader contribution of the study lies in showing that NLP-based review analysis is useful not only for technical classification, but also for strategic decision support. When properly structured, app review data can help convert large-scale customer feedback into actionable evidence for improving brand strategy, customer experience, and service performance \cite{liu2012,verhoef2010}.
+This chapter translated the analytical results into findings and discussion. It identified refund and cancellation, customer support, and delivery as the central areas influencing negative customer perception, highlighted app experience as a relative strength, and positioned the results against both the benchmark paper and the Swiggy comparison context. The next chapter builds on these findings by presenting managerial implications and practical recommendations for action.

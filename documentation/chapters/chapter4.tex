@@ -79,6 +79,28 @@ App experience & 5,812 & 18.34\% & 78.97\% & 0.6063 \\
 \end{tabular}
 \end{table}
 
+\section{Theme Volume and Sentiment Concentration}
+
+Theme-wise interpretation becomes stronger when volume and sentiment intensity are read together. A theme with a high negative share is important because it signals concentrated dissatisfaction, but a theme with a large review base is equally important because it affects a larger portion of the customer population. The present dataset contains examples of both types. Refund and cancellation is the clearest example of concentrated negativity, whereas delivery is the clearest example of high-volume exposure.
+
+This distinction helps avoid oversimplified decision-making. If management were to focus only on negative share, delivery might appear less urgent than refund and cancellation. If management were to focus only on review volume, refund and cancellation might be undervalued despite its extremely negative sentiment pattern. The results therefore support a more balanced interpretation in which both volume and negativity must be considered together while setting improvement priorities.
+
+\begin{table}[h]
+\centering
+\caption{Theme Profile by Review Volume and Sentiment Concentration}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Theme} & \textbf{Total Rows} & \textbf{Negative Rows} & \textbf{Interpretive Role} \\
+\midrule
+Delivery & 16,106 & 6,408 & Highest-volume operational theme \\
+Refund and cancellation & 8,545 & 7,547 & Highest-intensity dissatisfaction theme \\
+App experience & 5,812 & 1,066 & Large theme with favorable sentiment \\
+Customer support & 3,191 & 2,179 & Recovery-stage dissatisfaction theme \\
+Pricing and fees & 3,100 & 1,169 & Moderate-volume value-perception theme \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Priority Themes for Managerial Attention}
 
 To identify the most strategically important issue areas, priority was interpreted using both negative share and review volume. On this basis, refund and cancellation emerges as the highest-priority theme in the study. Its priority score is 7,546.94, which is the highest among all themes. Delivery follows closely with a priority score of 6,408.58, not because it is the most negative theme, but because of its very large review volume. Customer support is the third major priority theme with a score of 2,179.13.
@@ -129,9 +151,33 @@ App experience & 1,810 & 15.86\% & 81.71\% & 0.6586 \\
 \end{tabular}
 \end{table}
 
+\section{Comparison Between Full-Period and Recent-Period Results}
+
+Comparing the full-period and recent-period views helps reveal whether customer concerns are stable or changing. In the present study, the broad theme structure remains stable across both periods. Refund and cancellation remains the most problematic theme in both the overall dataset and the 2024+ subset, while app experience remains comparatively positive in both views. This continuity suggests that the core experience drivers identified in the study are persistent rather than temporary.
+
+At the same time, the recent-period subset indicates sharper negativity in some categories. Customer support becomes more negative in the recent subset, and delivery shows weaker net sentiment than in the full-period view. This means that recent customer feedback does not simply repeat the historical pattern; it also suggests where pressure may be intensifying. Such comparisons are important because they help managers distinguish between long-standing structural issues and emerging operational stress points.
+
+\begin{table}[h]
+\centering
+\caption{Full-Period versus Recent-Period Comparison for Selected Themes}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Theme} & \textbf{Full Neg. Share} & \textbf{Recent Neg. Share} & \textbf{Full Net Sent.} & \textbf{Recent Net Sent.} \\
+\midrule
+Delivery & 39.79\% & 42.75\% & 0.1587 & 0.0985 \\
+Refund and cancellation & 88.32\% & 90.45\% & -0.7863 & -0.8246 \\
+Customer support & 68.29\% & 76.35\% & -0.3823 & -0.5451 \\
+Pricing and fees & 37.71\% & 37.09\% & 0.1700 & 0.1494 \\
+App experience & 18.34\% & 15.86\% & 0.6063 & 0.6586 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Trend Over Time}
 
 The year-wise sentiment view adds an additional interpretive layer by showing how customer sentiment share has varied across time. Rather than treating all reviews as one undifferentiated block, this temporal view helps track whether negative sentiment, positive sentiment, or neutral sentiment becomes more prominent during particular periods. Such a trend perspective is valuable because it allows the analyst to connect sentiment movement with changing business conditions, platform updates, operational issues, or shifts in customer expectations.
+
+The trend chart should not be read as a causal explanation by itself, since review volumes and platform behavior can vary across years. However, it remains useful as an exploratory device because it highlights periods in which dissatisfaction becomes more visible or positive sentiment recovers. In a business setting, such year-wise movement can guide further investigation by linking sentiment change with operational events, policy changes, campaign periods, or app version transitions.
 
 \screenshotfigure{figures/dashboard_trend_over_time.png}{Trend over time view showing sentiment share by year. This chart provides a temporal perspective on how customer feedback has evolved across the review history.}{fig:trend-over-time-dashboard}{0.95}
 
@@ -165,6 +211,29 @@ SentiLens (best model in current study) & 90.17\% & 0.6771 & 0.6868 \\
 \end{tabular}
 \end{table}
 
+\section{Class-Wise Benchmark Interpretation}
+
+Overall accuracy is useful, but it does not fully explain where one model is stronger than another. In the present project, SentiLens performs better than the recreated Random Forest not only in overall accuracy but also in average recall and several class-specific metrics. This is important because review analytics datasets often contain class imbalance, especially when neutral sentiment is much smaller than positive and negative sentiment.
+
+The class-wise results suggest that the strongest practical advantage of SentiLens lies in maintaining competitive performance on the dominant positive and negative classes while also improving the detection of minority-class neutral reviews relative to the recreated Random Forest. This matters for managerial interpretation because a model that completely ignores neutral or mixed feedback may oversimplify the voice of the customer. Even though neutral recall remains modest, the best-performing model still offers a more balanced output than the recreated Random Forest within the present dataset context.
+
+\begin{table}[h]
+\centering
+\caption{Selected Class-Wise Benchmark Metrics}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Metric} & \textbf{Paper RF} & \textbf{Recreated RF} & \textbf{SentiLens} \\
+\midrule
+Negative precision & 0.9300 & 0.8620 & 0.9037 \\
+Negative recall & 0.8900 & 0.9192 & 0.9342 \\
+Neutral precision & 0.9600 & 0.1818 & 0.1771 \\
+Neutral recall & 0.7300 & 0.0169 & 0.2152 \\
+Positive precision & 0.9200 & 0.9120 & 0.9505 \\
+Positive recall & 0.9900 & 0.9044 & 0.9109 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Interpretive Summary of Results}
 
 Taken together, the results show that customer sentiment toward Zomato is shaped less by broad abstract perception and more by a few recurring operational themes. Refund and cancellation is the clearest source of dissatisfaction, customer support amplifies this dissatisfaction through poor issue resolution, and delivery acts as the highest-volume service driver. By contrast, app experience emerges as a relative strength, suggesting that Zomato's digital interface performs better than certain post-order service processes.
@@ -191,6 +260,36 @@ Swiggy & 45,538 & 24,865 & 54.60\% & 43.49\% & -0.1111 \\
 \end{table}
 
 At the brand level, Zomato performs better than Swiggy within the present Google Play-only comparison frame. Zomato shows a lower negative share and a higher positive share, resulting in a positive net sentiment value, while Swiggy shows a negative overall net sentiment. Theme-level comparison further suggests that Zomato holds a relative advantage in several major issue areas, including delivery, refund and cancellation, app experience, and customer support. This does not imply that Zomato is free from serious service pain points; rather, it indicates that its sentiment profile is comparatively stronger than the selected competitor when both brands are evaluated under the same labeling logic.
+
+\section{Theme-Level Competitor Gap Interpretation}
+
+The theme-gap view provides a more nuanced competitor comparison than brand-level shares alone. It shows where Zomato performs relatively better and by how much. For example, Zomato has a lower negative share than Swiggy in delivery, refund and cancellation, app experience, and customer support. These differences are especially meaningful because they occur in some of the highest-volume and highest-sensitivity themes in the dataset.
+
+This interpretation is useful in strategic terms. If Zomato had outperformed Swiggy only in minor or low-volume themes, the competitor result would carry limited business value. Instead, the relative advantage appears in the same themes that matter most to customer perception. That makes the competitor comparison relevant not merely as a descriptive appendix, but as an external validation of the importance of the issue clusters identified in the Zomato-only analysis.
+
+\begin{table}[h]
+\centering
+\caption{Illustrative Theme-Level Gaps: Zomato Minus Swiggy}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Theme} & \textbf{Negative Share Gap} & \textbf{Net Sentiment Gap} \\
+\midrule
+Delivery & -0.0754 & 0.1399 \\
+Refund and cancellation & -0.0598 & 0.1143 \\
+Customer support & -0.0261 & 0.0433 \\
+App experience & -0.0315 & 0.0604 \\
+Competitor comparison & -0.0461 & 0.0954 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Example of Focused Theme Interpretation Through Dashboard Filtering}
+
+One of the practical strengths of the dashboard is that it supports focused theme analysis rather than only aggregate interpretation. For example, when the delivery theme is selected in the filter, the dashboard isolates sentiment share and net sentiment for delivery alone. This allows the analyst to view delivery not as one bar among many, but as a distinct operational category with its own current performance signal.
+
+The filtered theme view is especially useful in an MBA-style managerial context because real business decisions are often made issue by issue. A delivery manager, support manager, or service recovery manager is unlikely to act on aggregate sentiment percentages alone. The theme filter therefore transforms a broad review analytics output into a decision-oriented monitoring tool that can support targeted action planning.
+
+\screenshotfigure{figures/dashboard_theme_filtered_delivery.png}{Focused dashboard example for the delivery theme. This filtered view supports issue-level interpretation rather than only aggregate brand-level reading.}{fig:filtered-theme-dashboard}{0.9}
 
 \screenshotfigure{figures/dashboard_competitor_overview.png}{Competitor benchmark dashboard comparing Zomato and Swiggy on overall negative and positive sentiment shares using Google Play-only data.}{fig:competitor-overview-dashboard}{0.95}
 
